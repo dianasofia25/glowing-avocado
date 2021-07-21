@@ -1,0 +1,68 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+
+        * {
+            transition: all 2s; /* transición de 0.5 segundos a todos los elementos */
+        }
+        
+        h1,h4 {color: white;} 
+        
+        body {
+            -webkit-perspective: 1000;
+            background: #8E1119;
+            min-height: 100vh;
+        }
+
+        div {
+            display: inline-block;/* propiedad que respeta el ancho y alto de las imagenes y hace que todo se vea en linea */ 
+        }
+
+        :root {
+            --w: calc(90vw / 7); /*ancho de las cartas, calc se usa para realizar calculos */
+            --h: calc(50vh / 2); /*largo de las cartas */
+        }
+
+        .carta {
+            width: var(--w); /*se llama a las variables que calculan el ancho y largo de las cartas*/ 
+            min-width: 100px; /* ancho minimo de las cartas*/
+            height: var(--h);
+            transform-style: preserve-3d; /* propiedad que permite un aspecto 3d a las cartas */
+            animation: animacion 5s;
+        }
+        
+        /* animacion al proceso de iniciar */ 
+        @keyframes animacion {
+            30%, 90% /* cantidad de tiempo en % que se va a mostrar cada cara*/ {
+                transform: rotateY(180deg);
+            }
+        }
+
+        .cara {
+            width: var(--w); /*se llama a las variables que calculan el ancho y largo de las cartas*/ 
+            min-width: 100px; /* ancho minimo de las cartas*/
+            height: var(--h);
+            position: absolute; /* propiedad que permite que se vea la cara trasera sobre la cara delantera */ 
+            box-shadow: inset 0 0 0 3px white; /* creamos ese borde negro de las cartas */
+            font-size: 350%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .atras {
+            padding: 10px;
+            border-radius: 100px;
+            background-color: #d63a44;
+            transform: rotateY(180deg); /*rotacion de 180° sobre el eje y */ 
+        }
+
+        .adelante {
+            padding: 10px;
+            border-radius: 100px;
+            background: #f9d29d;
+        }
+        
+    
