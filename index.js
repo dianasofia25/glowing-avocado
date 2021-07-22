@@ -33,9 +33,9 @@
                         <i class="bi bi-file-lock"></i>
                     </div>
                 </div>
-                `); // ${} permite acceder a elementos
+                `); 
                 if (i % 2 === 1) {
-                    dados.splice(0, 1); // splice elimina 1 elemento desde la posicion 0
+                    dados.splice(0,1); // splice elimina 1 elemento desde la posicion 0                
                 }
             }
             cartas.sort(() => Math.random() - 0.5); // desorganiza las cartas 
@@ -56,7 +56,7 @@
                 move.innerHTML=selec.length;    
                 if  (selec.length === 20 ) {     
                     alert('PERDISTEEEEEEEE!');
-                    einiciar(r);                 
+                    reiniciar();                 
                 }
             
             if (selecciones.length === 2) {
